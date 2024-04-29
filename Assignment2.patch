@@ -1,0 +1,21 @@
+diff --git a/Reverser.java b/Reverser.java
+index 2e0cb56..bf2b5ec 100644
+--- a/Reverser.java
++++ b/Reverser.java
+@@ -20,6 +20,16 @@ public class Reverser {
+ 
+         // ... and here!
+         // ATTENTION: Do not use any standard library classes in your solution!
++        
++        char[] buffer = new char[1024];
++        int length;
++        StringBuilder reversed = new StringBuilder();
++        while ((length = reader.read(buffer)) != -1) {
++            for (int i = length - 1; i >= 0; i--) {
++                reversed.append(buffer[i]);
++            }
++        }
++        writer.write(reversed.toString());
+     }
+ 
+     public static void main(String[] args) {

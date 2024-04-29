@@ -20,6 +20,16 @@ public class Reverser {
 
         // ... and here!
         // ATTENTION: Do not use any standard library classes in your solution!
+        
+        char[] buffer = new char[1024];
+        int length;
+        StringBuilder reversed = new StringBuilder();
+        while ((length = reader.read(buffer)) != -1) {
+            for (int i = length - 1; i >= 0; i--) {
+                reversed.append(buffer[i]);
+            }
+        }
+        writer.write(reversed.toString());
     }
 
     public static void main(String[] args) {
